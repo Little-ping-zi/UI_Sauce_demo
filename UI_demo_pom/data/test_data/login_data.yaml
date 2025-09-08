@@ -1,0 +1,28 @@
+# 登录测试用例
+login_cases:
+  - name: "标准用户登录"
+    username: "standard_user"
+    password: "secret_sauce"
+    expected: "success"
+    description: "使用有效凭证登录应成功"
+
+  - name: "锁定用户登录失败"
+    username: "locked_out_user"
+    password: "secret_sauce"
+    expected: "error"
+    error_message: "Epic sadface: Sorry, this user has been locked out."
+    description: "锁定用户登录应显示错误星系"
+
+  - name: "用户密码为空"
+    username: "standard_user"
+    password: ""
+    expected: "error"
+    error_message: "Epic sadface: Password is required"
+    description: "空用户名密码应显示错误"
+
+  - name: "错误密码"
+    username: "standard_user"
+    password: "error_password"
+    expected: "error"
+    error_message: "Epic sadface: Username and password do not match any user in this service"
+    description: "错误密码应显示错误信息"
