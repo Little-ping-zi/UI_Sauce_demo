@@ -1,0 +1,40 @@
+#    _username_input_loc = (By.ID, 'user-name')
+#    _password_input_loc = (By.ID, 'password')
+#    _login_button_loc = (By.CLASS_NAME, 'submit-button')
+#    _menu_button_loc = (By.ID, 'react-burger-menu-btn')
+#    _logout_loc = (By.ID, 'logout_sidebar_link')
+testcase:
+      -
+        element_info: 'user-name'
+        find_type: id
+        operate_type: send_keys
+        info: 输入账号
+      -
+        element_info: 'password'
+        find_type: id
+        operate_type: send_keys
+        info: 输入密码
+      -
+        element_info: 'submit-button'
+        find_type: class_name
+        operate_type: click
+        info: 点击登录按钮
+      -
+        element_info: 'react-burger-menu-btn'
+        find_type: id
+        operate_type: click
+        info: 点击菜单弹框
+      -
+        element_info: 'logout_sidebar_link'
+        find_type: id
+        operate_type: click
+        info: 退出登录
+check:
+      - element_info: 'app_logo'
+        find_type: class_name
+        operate_type: text
+        info: 获取首页文案
+      - element_info: "//h3[@data-test='error']"
+        find_type: xpath
+        operate_type: text
+        info: 锁定用户提示

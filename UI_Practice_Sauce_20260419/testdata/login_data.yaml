@@ -1,0 +1,48 @@
+-
+  id: test_login001
+  detail: 成功登录
+  screenshot: login_success
+  data:
+    phone: 'standard_user'
+    password: 'secret_sauce'
+  check: 'Swag Labs'
+-
+  id: test_login002
+  detail: 锁定用户成功登录
+  screenshot: login_locked
+  data:
+    phone: 'locked_out_user'
+    password: 'secret_sauce'
+  check: 'Epic sadface: Sorry, this user has been locked out.'
+-
+  id: test_login003
+  detail: 问题用户成功登录
+  screenshot: login_problem
+  data:
+    phone: 'problem_user'
+    password: 'secret_sauce'
+  check: 'Swag Labs'
+-
+  id: test_login004
+  detail: 性能下降成功登录
+  screenshot: login_performance
+  data:
+    phone: 'performance_glitch_user'
+    password: 'secret_sauce'
+  check: 'Swag Labs'
+-
+  id: test_login005
+  detail: 错误用户成功登录
+  screenshot: login_error
+  data:
+    phone: 'error_user'
+    password: 'secret_sauce'
+  check: 'Swag Labs'
+-
+  id: test_login006
+  detail: 视觉测试用户成功登录
+  screenshot: login_visual
+  data:
+    phone: 'visual_user'
+    password: 'secret_sauce'
+  check: 'Swag Labs'

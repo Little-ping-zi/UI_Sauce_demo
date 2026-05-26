@@ -1,0 +1,51 @@
+# 购物车页面元素定位配置
+# Cart Page Elements
+# 使用键名映射方式，避免索引依赖问题
+
+elements:
+  # ========== 操作按钮 ==========
+  continue_shopping:
+    locator: 'continue-shopping'
+    type: id
+    description: 点击继续购物按钮
+  
+  checkout:
+    locator: 'checkout'
+    type: id
+    description: 点击结算按钮
+  
+  remove_button:
+    locator: 'cart_button'
+    type: class_name
+    description: 点击移除商品按钮
+
+  # ========== 验证元素 ==========
+  page_title:
+    locator: 'title'
+    type: class_name
+    description: 获取页面标题
+  
+  cart_items:
+    locator: 'cart_item'
+    type: class_name
+    description: 获取所有购物车商品项
+  
+  cart_quantity:
+    locator: 'cart_quantity'
+    type: class_name
+    description: 获取商品数量
+  
+  cart_description:
+    locator: 'inventory_item_name'
+    type: class_name
+    description: 获取商品描述
+  
+  cart_price:
+    locator: 'inventory_item_price'
+    type: class_name
+    description: 获取商品价格
+  
+  empty_cart_message:
+    locator: "//div[@class='cart_footer']//div[contains(text(), 'Your cart is empty')]"
+    type: xpath
+    description: 获取空购物车提示信息

@@ -1,0 +1,78 @@
+# 商品页面测试数据配置
+# 使用字典格式，方便直接通过 key 访问
+
+test_cases:
+  # 测试用例1: 验证商品页面加载
+  test_01_product_page_loads_successfully:
+    detail: 验证商品页面能够成功加载
+    screenshot: product_page_loaded
+    data:
+      page_url: '/inventory.html'
+    check:
+      page_title: 'Products'
+      min_product_count: 1
+
+  # 测试用例2: 添加单个商品到购物车
+  test_02_add_single_product_to_cart:
+    detail: 验证单个商品可以成功添加到购物车
+    screenshot: add_single_product
+    data:
+      product_name: 'backpack'
+    check:
+      button_changed: true
+
+  # 测试用例3: 添加多个商品到购物车
+  test_03_add_multiple_products_to_cart:
+    detail: 验证多个商品可以成功添加到购物车
+    screenshot: add_multiple_products
+    data:
+      products:
+        - 'bike_light'
+        - 'bolt_shirt'
+        - 'fleece_jacket'
+    check:
+      all_added: true
+      expected_count: 3
+
+  # 测试用例4: 从购物车移除商品
+  test_04_remove_product_from_cart:
+    detail: 验证可以从购物车移除商品
+    screenshot: remove_product
+    data:
+      product_name: 'onesie'
+    check:
+      button_restored: true
+
+  # 测试用例5: 从商品页跳转到购物车
+  test_05_navigate_to_cart_from_product_page:
+    detail: 验证可以从商品页面跳转到购物车页面
+    screenshot: navigate_to_cart
+    data:
+      product_name: 'red_tshirt'
+    check:
+      url_contains: 'cart.html'
+
+  # 测试用例6: 验证所有商品显示
+  test_06_all_products_are_displayed:
+    detail: 验证所有商品都正确显示
+    screenshot: all_products_displayed
+    data:
+      expected_products:
+        - 'backpack'
+        - 'bike_light'
+        - 'bolt_shirt'
+        - 'fleece_jacket'
+        - 'onesie'
+        - 'red_tshirt'
+    check:
+      total_count: 6
+      all_visible: true
+
+  # 测试用例7: 验证商品页面标题
+  test_07_product_page_title_verification:
+    detail: 验证商品页面标题正确性
+    screenshot: verify_page_title
+    data:
+      page_url: '/inventory.html'
+    check:
+      page_title: 'Products'

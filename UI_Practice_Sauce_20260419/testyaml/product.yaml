@@ -1,0 +1,83 @@
+# 商品页面元素定位配置
+# Product Page Elements
+# 使用键名映射方式，避免索引依赖问题
+
+elements:
+  # ========== 添加商品按钮 ==========
+  backpack_add:
+    locator: 'add-to-cart-sauce-labs-backpack'
+    type: id
+    description: 添加背包到购物车
+  
+  bike_light_add:
+    locator: 'add-to-cart-sauce-labs-bike-light'
+    type: id
+    description: 添加自行车灯到购物车
+  
+  bolt_shirt_add:
+    locator: 'add-to-cart-sauce-labs-bolt-t-shirt'
+    type: id
+    description: 添加Bolt T恤到购物车
+  
+  fleece_jacket_add:
+    locator: 'add-to-cart-sauce-labs-fleece-jacket'
+    type: id
+    description: 添加抓绒夹克到购物车
+  
+  onesie_add:
+    locator: 'add-to-cart-sauce-labs-onesie'
+    type: id
+    description: 添加婴儿连体衣到购物车
+  
+  red_tshirt_add:
+    locator: 'add-to-cart-test.allthethings()-t-shirt-(red)'
+    type: id
+    description: 添加红色T恤到购物车
+
+  # ========== 移除商品按钮 ==========
+  backpack_remove:
+    locator: 'remove-sauce-labs-backpack'
+    type: id
+    description: 从购物车移除背包
+  
+  bike_light_remove:
+    locator: 'remove-sauce-labs-bike-light'
+    type: id
+    description: 从购物车移除自行车灯
+  
+  bolt_shirt_remove:
+    locator: 'remove-sauce-labs-bolt-t-shirt'
+    type: id
+    description: 从购物车移除Bolt T恤
+  
+  fleece_jacket_remove:
+    locator: 'remove-sauce-labs-fleece-jacket'
+    type: id
+    description: 从购物车移除抓绒夹克
+  
+  onesie_remove:
+    locator: 'remove-sauce-labs-onesie'
+    type: id
+    description: 从购物车移除婴儿连体衣
+  
+  red_tshirt_remove:
+    locator: 'remove-test.allthethings()-t-shirt-(red)'
+    type: id
+    description: 从购物车移除红色T恤
+
+  # ========== 其他操作元素 ==========
+  cart_link:
+    locator: 'shopping_cart_link'
+    type: class_name
+    description: 点击购物车图标
+
+  # ========== 验证元素 ==========
+  page_title:
+    locator: 'title'
+    type: class_name
+    description: 获取页面标题
+  
+  inventory_items:
+    locator: 'inventory_item'
+    type: class_name
+    description: 获取所有商品元素

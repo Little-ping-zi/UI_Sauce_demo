@@ -1,0 +1,79 @@
+# 购物车页面测试数据配置
+# 使用字典格式，方便直接通过 key 访问
+
+test_cases:
+  # 测试用例1: 验证购物车页面加载
+  test_01_cart_page_loads_successfully:
+    detail: 验证购物车页面能够成功加载
+    screenshot: cart_page_loaded
+    data:
+      page_url: '/cart.html'
+    check:
+      page_title: 'Your Cart'
+
+  # 测试用例2: 验证添加商品后显示在购物车
+  test_02_verify_added_product_in_cart:
+    detail: 验证添加到购物车的商品正确显示
+    screenshot: verify_cart_item
+    data:
+      product_name: 'backpack'
+      expected_price: '$29.99'
+    check:
+      item_displayed: true
+      quantity_visible: true
+
+  # 测试用例3: 验证可以从购物车移除商品
+  test_03_remove_item_from_cart:
+    detail: 验证可以从购物车移除商品
+    screenshot: remove_cart_item
+    data:
+      product_name:
+        - 'bike_light'
+        - 'fleece_jacket'
+        - 'onesie'
+    check:
+      item_removed: true
+      cart_empty_after_removal: false
+
+  # 测试用例4: 验证多个商品在购物车中
+  test_04_multiple_items_in_cart:
+    detail: 验证多个商品可以同时在购物车中
+    screenshot: multiple_cart_items
+    data:
+      products:
+        - 'bolt_shirt'
+        - 'fleece_jacket'
+        - 'onesie'
+    check:
+      total_items: 3
+      all_items_visible: true
+
+  # 测试用例5: 验证继续购物按钮功能
+  test_05_continue_shopping_button:
+    detail: 验证点击继续购物按钮返回商品页面
+    screenshot: continue_shopping
+    data:
+      product_name: 'red_tshirt'
+    check:
+      redirected_to_products: true
+      url_contains: 'inventory.html'
+
+  # 测试用例6: 验证空购物车状态
+  test_06_empty_cart_state:
+    detail: 验证空购物车的正确显示
+    screenshot: empty_cart
+    data:
+      clear_all_items: true
+    check:
+      cart_is_empty: true
+      empty_message_visible: true
+
+  # 测试用例7: 验证结算按钮功能
+  test_07_checkout_button_functionality:
+    detail: 验证点击结算按钮进入结算流程
+    screenshot: checkout_process
+    data:
+      product_name: 'backpack'
+    check:
+      redirected_to_checkout: true
+      url_contains: 'checkout-step-one.html'
